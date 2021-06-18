@@ -18,4 +18,10 @@ jobs:
       - name: Build Alpine package 
         uses: ./actions/
 
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: gnirehtet-rust-delay
+          path: /home/builder/package/**/*.apk
+
 

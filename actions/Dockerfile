@@ -8,6 +8,5 @@ RUN apk add alpine-sdk sudo \
 COPY entry.sh /sbin/entry.sh
 
 USER builder
-WORKDIR /home/builder
 
 ENTRYPOINT ["/sbin/entry.sh"]
