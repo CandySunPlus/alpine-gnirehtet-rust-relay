@@ -4,19 +4,18 @@ set -e
 export HOME=/home/builder
 
 main() {
-  SRC=$HOME/src
-  ABUILD=$HOME/.abuild
 
   sudo mkdir $INPUT_OUTPUT
   sudo chown -R builder:abuild $INPUT_OUTPUT
+  cp -r ./* $BUILD_SRC && cd $BUILD_SRC
 
-  ["$INPUT_KEY"] && {
+  if [ ! -n "$INPUT_KEY" ]; then
+    echo "Can not find private key"
+    exit 1
+  else
     echo -e "$INPUT_KEY" > $ABUILD/id_rsa
-    export PACKAGE_PRIVKEY=$ABUILD/id_rsa
-  }
+  fi
 
-  mkdir $ABUILD $SRC
-  cp -r ./* $SRC && cd $SRC
 
   exec abuild -r -P $INPUT_OUTPUT
 }
