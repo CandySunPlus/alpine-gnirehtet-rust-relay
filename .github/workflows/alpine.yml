@@ -24,7 +24,7 @@ jobs:
           mkdir -p /var/cache/distfiles
           chown builder:abuild /var/cache/distfiles
           su builder
-          abuild-keygen -a -i
+          abuild-keygen -a -i -n
 
           
 
