@@ -1,10 +1,13 @@
 FROM alpine:latest
-RUN apk add alpine-sdk sudo
-RUN adduser -G abuild -s /bin/ash -D builder
-RUN echo "builder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-RUN mkdir -p /var/cache/distfiles
-RUN chown builder:abuild /var/cache/distfiles
+RUN apk add alpine-sdk sudo \
+  && adduser -G abuild -s /bin/ash -D builder \
+  && echo "builder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
+  && mkdir -p /var/cache/distfiles \
+  && chown builder:abuild /var/cache/distfiles
 USER builder
+WORKDIR /github/home
+
 RUN pwd \
-    && abuild-keygen -a -i -n
+      && ls -alh \
+      && abuild-keygen -a -i -n
 ENTRYPOINT ["/usr/bin/abuild", "-r"]
