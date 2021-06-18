@@ -18,10 +18,14 @@ jobs:
       - name: Build Alpine package 
         uses: ./actions/
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
+      - name: Copy artifact
+        run: |
+          sudo mkdir ${{ github.workspace }}/release
+          sudo cp /home/builder/packages/home/**/*.apk ${{ github.workspace }}/release
+
+      - uses: actions/upload-artifact@v2
         with:
-          name: alpine-gnirehtet
+          name: gnirehtet.zip
           path: ${{ github.workspace }}/release/*.apk
 
 
