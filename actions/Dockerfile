@@ -11,5 +11,5 @@ WORKDIR /github/workspace
 RUN pwd \
       && ls -alh \
       && abuild-keygen -a -i -n \
-      && cp /home/builder/.abuild /github/home/
+      && cp -r /home/builder/.abuild /github/home/
 ENTRYPOINT ["/usr/bin/abuild", "-r"]
