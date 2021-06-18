@@ -1,6 +1,7 @@
 name: 'Alpine Package Build Action'
 description: 'GitHub Action for build Alpine package'
 author: 'NikSun <candysfm@gmail.com>'
+on: push
 branding:
   icon: 'cloud'
   color: 'blue'
