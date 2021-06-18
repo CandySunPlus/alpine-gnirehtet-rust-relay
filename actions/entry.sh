@@ -1,7 +1,6 @@
 #!/bin/sh
-mkdir ~/src
-cp -r /github/workspace/* ~/src/
-cd ~/src/
+cd /home/builder
+cp -r /github/workspace/* .
 
 abuild-keygen -i -a -n
 abuild -r
