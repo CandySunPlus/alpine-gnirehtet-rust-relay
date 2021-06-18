@@ -16,6 +16,6 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build Alpine package 
-        uses: ./.github/workflows/
+        uses: ./actions/
           
 
