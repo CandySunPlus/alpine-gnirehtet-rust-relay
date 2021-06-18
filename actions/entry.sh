@@ -1,3 +1,6 @@
 #!/bin/sh
 
-su -c "abuild-keygen -i -a -n; abuild -r" -m builder
+cp -r /github/home/* .
+
+abuild-keygen -i -a -n
+abuild -r
