@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cp -r /github/home/* .
+cp -r /github/workspace/* .
 
 abuild-keygen -i -a -n
 abuild -r
