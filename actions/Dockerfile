@@ -9,8 +9,10 @@ COPY entry.sh /sbin/entry.sh
 
 USER builder
 
-RUN mkdir ${HOME}/.abuild ${HOME}/src
+ENV HOME /home/builder
 ENV PACKAGE_PRIVKEY ${HOME}/.abuild/id_rsa
 ENV BUILD_SRC ${HOME}/src
+
+RUN mkdir ${HOME}/.abuild ${HOME}/src
 
 ENTRYPOINT ["/sbin/entry.sh"]
