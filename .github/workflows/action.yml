@@ -1,0 +1,19 @@
+name: 'Alpine Package Build Action'
+description: 'GitHub Action for build Alpine package'
+author: 'NikSun <candysfm@gmail.com>'
+branding:
+  icon: 'cloud'
+  color: 'blue'
+inputs:
+  name:
+    description: 'Who to echo'
+    required: true
+    default: 'World'
+outputs:
+  time:
+    description: 'The time we echo'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.name }}
