@@ -8,7 +8,6 @@ cp -r /github/workspace/* .
 abuild-keygen -i -a -n
 abuild -r
 
-ls $HOME
-ls $HOME/packages
 sudo mkdir /github/workspace/release
+find $HOME/packages
 sudo cp $HOME/packages/**/*.apk /github/workspace/release/
