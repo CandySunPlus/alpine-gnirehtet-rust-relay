@@ -27,7 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a container
-        uses: ./
+        uses: ./.github/workflows/
         id: hello
         with:
           name: 'NikSun'
