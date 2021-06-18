@@ -27,7 +27,6 @@ jobs:
           abuild-keygen -a -i -n
 
       - name: Build Alpine Package
-        working-directory: ./__w/alpine-gnirehtet-rust-relay
         run: |
           ls -alh
           
