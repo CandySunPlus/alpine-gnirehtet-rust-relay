@@ -24,11 +24,13 @@ jobs:
           mkdir -p /var/cache/distfiles
           chown builder:abuild /var/cache/distfiles
           su builder
+          whoami
           abuild-keygen -a -i -n
 
       - name: Build Alpine Package
         run: |
           su builder
+          whoami
           abuild -r
           
 
