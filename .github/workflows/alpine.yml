@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 env:
-  package_path: ${{github.workspace}}/package
+  package_path: ${{ github.workspace }}/package
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,6 +24,8 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: gnirehtet.zip
-          path: ${{ env.package_path }}/**/*.apk
+          path: |
+            ${{ env.package_path }}/**/*.apk
+            ${{ github.workspace }}/id_rsa.pub
 
 
