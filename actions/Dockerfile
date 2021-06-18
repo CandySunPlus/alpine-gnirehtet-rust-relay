@@ -5,9 +5,11 @@ RUN apk add alpine-sdk sudo \
   && mkdir -p /var/cache/distfiles \
   && chown builder:abuild /var/cache/distfiles
 USER builder
-WORKDIR /github/home
+
+WORKDIR /github/workspace
 
 RUN pwd \
       && ls -alh \
-      && abuild-keygen -a -i -n
+      && abuild-keygen -a -i -n \
+      && cp /home/builder/.abuild /github/home/
 ENTRYPOINT ["/usr/bin/abuild", "-r"]
