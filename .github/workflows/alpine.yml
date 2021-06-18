@@ -28,6 +28,6 @@ jobs:
 
       - name: Build Alpine Package
         run: |
-          ls -alh
+          abuild -r
           
 
