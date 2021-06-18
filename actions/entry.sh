@@ -13,8 +13,8 @@ main() {
     echo "Can not find private key"
     exit 1
   else
-    echo "write package private key ${PACKAGE_PRIVKEY}"
-    echo -e "$INPUT_KEY" > $PACKAGE_PRIVKEY
+    echo "write package private key ${PACKAGER_PRIVKEY}"
+    echo -e "$INPUT_KEY" > $PACKAGER_PRIVKEY
   fi
 
 

@@ -10,7 +10,7 @@ COPY entry.sh /sbin/entry.sh
 USER builder
 
 ENV HOME /home/builder
-ENV PACKAGE_PRIVKEY ${HOME}/.abuild/id_rsa
+ENV PACKAGER_PRIVKEY ${HOME}/.abuild/id_rsa
 ENV BUILD_SRC ${HOME}/src
 
 RUN mkdir ${HOME}/.abuild ${HOME}/src
