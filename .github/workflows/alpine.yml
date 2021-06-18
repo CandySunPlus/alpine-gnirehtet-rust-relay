@@ -20,6 +20,9 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
+    container:
+      image: alpine:latest
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -27,9 +30,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a container
-        uses: ./.github/workflows/
-        id: hello
-        with:
-          name: 'NikSun'
-      - name: Get the output time
-        run: echo "The time was ${{steps.hello.output.time}}"
+        run: ls /
