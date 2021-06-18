@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Build Alpine package 
+      - name: Build Alpine package to ${{ env.package_path }} 
         uses: ./actions/
         with:
           output: ${{ env.package_path }}
