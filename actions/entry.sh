@@ -1,7 +1,5 @@
 #!/bin/sh
 
-echo $(whoami)
-
-abuild -i -a -n
+abuild-keygen -i -a -n
 
 abuild -r
