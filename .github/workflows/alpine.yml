@@ -21,7 +21,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: gnirehtet-rust-delay
-          path: $GITHUB_WORKSPACE/release/*.apk
+          name: alpine-gnirehtet
+          path: ${{ github.workspace }}/release/*.apk
 
 
