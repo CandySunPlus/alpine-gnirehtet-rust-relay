@@ -2,11 +2,10 @@
 
 export HOME=/home/builder
 
-cd $HOME && mkdir -p packages/home
-cp -r "${GITHUB_WORKSPACE}"/* .
+sudo mkdir $INPUT_OUTPUT && sudo chown builder:abuild $INPUT_OUTPUT
 
 abuild-keygen -i -a -n
-abuild -r
+abuild -r -s $GITHUB_WORKSPACE -P $INPUT_OUTPUT
 
 echo "Copy package to output path ${INPUT_OUTPUT}"
 sudo mkdir $INPUT_OUTPUT
