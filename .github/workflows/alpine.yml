@@ -22,6 +22,6 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: gnirehtet-rust-delay
-          path: $GITHUB_WORKSPACE/release/apk
+          path: $GITHUB_WORKSPACE/release/*.apk
 
 
