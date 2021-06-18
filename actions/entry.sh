@@ -8,7 +8,7 @@ cp -r /github/workspace/* .
 abuild-keygen -i -a -n
 abuild -r
 
-echo "Copy from container..."
-sudo mkdir $GITHUB_WORKSPACE/release
-sudo cp $HOME/packages/home/**/*.apk $GITHUB_WORKSPACE/release/
+echo "Copy package to output path..."
+sudo mkdir $INPUT_OUTPUT
+sudo cp $HOME/packages/home/**/*.apk $INPUT_OUTPUT
 

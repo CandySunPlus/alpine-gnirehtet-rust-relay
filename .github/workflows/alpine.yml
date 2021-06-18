@@ -6,8 +6,8 @@ on:
   pull_request:
     branches: [ main ]
 
-  workflow_dispatch:
-
+env:
+  package_path: ${{github.workspace}}/package
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,10 +17,13 @@ jobs:
 
       - name: Build Alpine package 
         uses: ./actions/
+        with:
+          output: ${{ env.package_path }}
 
-      - uses: actions/upload-artifact@v2
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
         with:
           name: gnirehtet.zip
-          path: ${{ github.workspace }}/release/*.apk
+          path: ${{ env.package_path }}/*.apk
 
 

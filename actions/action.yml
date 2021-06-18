@@ -4,6 +4,10 @@ author: 'NikSun <candysfm@gmail.com>'
 branding:
   icon: 'cloud'
   color: 'blue'
+inputs:
+  output:
+    required: true
+    description: 'output package path'
 runs:
   using: 'docker'
   image: 'Dockerfile'
