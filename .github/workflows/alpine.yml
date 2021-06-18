@@ -5,21 +5,14 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    container:
-      image: alpine:latest
-
     steps:
-      - name: Echo System Info
-        run: uname -a
-
-      - name: Initialize Alpine package build env
-        run: ls /__t
-
       - uses: actions/checkout@v2
+      - name: Run version
+        uses: docker://alpine:latest
+        with:
+          args: uname -a
