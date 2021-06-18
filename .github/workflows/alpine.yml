@@ -16,9 +16,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Echo System Info
-        run: which apk
-
       - name: Initialize Alpine package build env
-        run: ls /__w
+        run: ls /github/home
 
