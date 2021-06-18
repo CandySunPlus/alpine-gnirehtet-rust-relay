@@ -11,26 +11,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: alpine:latest
 
     steps:
       - uses: actions/checkout@v2
 
-      - name: Initialize Alpine package build env
-        run: |
-          apk add alpine-sdk sudo
-          adduser -G abuild -s /bin/ash -D builder
-          echo "builder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-          mkdir -p /var/cache/distfiles
-          chown builder:abuild /var/cache/distfiles
-          su builder
-          whoami
-          abuild-keygen -a -i -n
-
-      - name: Build Alpine Package
-        run: |
-          su builder
-          whoami
-          abuild -r
+      - name: Build Alpine package 
+        uses: ./.github/workflows/
           
 
