@@ -8,6 +8,9 @@ inputs:
   output:
     required: true
     description: 'output package path'
+  key:
+    required: true
+    description: 'private key'
 runs:
   using: 'docker'
   image: 'Dockerfile'

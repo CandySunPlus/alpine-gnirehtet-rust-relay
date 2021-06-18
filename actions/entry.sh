@@ -10,8 +10,8 @@ main() {
   sudo mkdir $INPUT_OUTPUT
   sudo chown -R builder:abuild $INPUT_OUTPUT
 
-  ["$ID_RSA"] && {
-    echo -e "$ID_RSA" > $ABUILD/id_rsa
+  ["$INPUT_KEY"] && {
+    echo -e "$INPUT_KEY" > $ABUILD/id_rsa
     export PACKAGE_PRIVKEY=$ABUILD/id_rsa
   }
 

@@ -19,6 +19,7 @@ jobs:
         uses: ./actions/
         with:
           output: ${{ env.package_path }}
+          key: ${{ secrets.ID_RSA }}
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
