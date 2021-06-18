@@ -4,7 +4,6 @@ RUN apk add alpine-sdk sudo \
   && echo "builder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
   && mkdir -p /var/cache/distfiles \
   && chown builder:abuild /var/cache/distfiles
-USER builder
 
 COPY entry.sh /sbin/entry.sh
 

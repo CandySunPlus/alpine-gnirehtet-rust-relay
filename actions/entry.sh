@@ -2,9 +2,11 @@
 
 echo $(ls)
 
-sudo mkdir .abuild
+mkdir .abuild
 
-sudo chown builder:abuild .abuild
+chown builder:abuild .abuild
+
+su builder
 
 abuild-keygen -i -a -n
 
