@@ -13,7 +13,7 @@ main() {
     echo "Can not find private key"
     exit 1
   else
-    echo -e "$INPUT_KEY" > $ABUILD/id_rsa
+    echo -e "$INPUT_KEY" > $PACKAGE_PRIVKEY
   fi
 
 
