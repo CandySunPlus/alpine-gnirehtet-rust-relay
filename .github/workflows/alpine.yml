@@ -24,9 +24,10 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: gnirehtet.zip
+          name: gnirehtet-relay
           path: |
             ${{ env.package_path }}/**/*.apk
             ${{ github.workspace }}/niksun.rsa.pub
+          if-no-files-found: error
 
 
