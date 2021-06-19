@@ -6,11 +6,12 @@ RUN apk add alpine-sdk sudo \
   && chown builder:abuild /var/cache/distfiles
 
 COPY entry.sh /sbin/entry.sh
+COPY ../niksun.rsa.pub /etc/apk/keys/
 
 USER builder
 
 ENV HOME /home/builder
-ENV PACKAGER_PRIVKEY ${HOME}/.abuild/id_rsa
+ENV PACKAGER_PRIVKEY ${HOME}/.abuild/niksun.rsa
 ENV BUILD_SRC ${HOME}/src
 
 RUN mkdir ${HOME}/.abuild ${HOME}/src

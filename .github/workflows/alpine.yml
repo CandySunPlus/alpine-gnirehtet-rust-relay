@@ -27,6 +27,6 @@ jobs:
           name: gnirehtet.zip
           path: |
             ${{ env.package_path }}/**/*.apk
-            ${{ github.workspace }}/id_rsa.pub
+            ${{ github.workspace }}/niksun.rsa.pub
 
 
