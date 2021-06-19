@@ -7,6 +7,7 @@ main() {
 
   sudo mkdir $INPUT_OUTPUT
   sudo chown -R builder:abuild $INPUT_OUTPUT
+  sudo cp ./niksun.rsa.pub /etc/apk/keys/
   cp -r ./* $BUILD_SRC && cd $BUILD_SRC
 
   if [ ! -n "$INPUT_KEY" ]; then

@@ -6,7 +6,6 @@ RUN apk add alpine-sdk sudo \
   && chown builder:abuild /var/cache/distfiles
 
 COPY entry.sh /sbin/entry.sh
-COPY ../niksun.rsa.pub /etc/apk/keys/
 
 USER builder
 
