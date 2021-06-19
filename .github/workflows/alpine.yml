@@ -29,5 +29,14 @@ jobs:
             ${{ env.package_path }}/**/*.apk
             ${{ github.workspace }}/niksun.rsa.pub
           if-no-files-found: error
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with: 
+          files: |
+            ${{ env.package_path }}/**/*.apk
+            ${{ github.workspace }}/niksun.rsa.pub
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
