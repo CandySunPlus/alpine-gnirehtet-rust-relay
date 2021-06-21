@@ -4,4 +4,4 @@
 # Specify daemon options here.
 #
 
-sample_opts=""
+rc_ulimit="-n 65535"
