@@ -20,7 +20,7 @@ source="
 	gnirehtetd.initd
 	gnirehtetd.confd
   "
-builddir="$srcdir/$pkgname-$_ver/relay-rust"
+builddir="$srcdir/$pkgname-$pkgver/relay-rust"
 
 build() {
 	# Replace with proper build command(s)
