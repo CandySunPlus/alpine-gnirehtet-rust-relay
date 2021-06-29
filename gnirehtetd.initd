@@ -7,7 +7,7 @@ description="gnirehtet daemon"
 pidfile="/var/run/${RC_SVCNAME}.pid"
 output_log="/var/log/${RC_SVCNAME}.log"
 error_log="/var/log/${RC_SVCNAME}.err.log"
-directory="/usr/share/gnirehtet/"
+# directory="/usr/share/gnirehtet/"
 supervisor=supervise-daemon
 
 
@@ -18,8 +18,9 @@ depend() {
 }
 
 start_pre() {
-  dnslist=$(grep "nameserver" /etc/resolv.conf | awk -v d="," '{s=(NR==1?s:s d)$2}END{print s}')
-  command_args="autorun -d ${dnslist}"
+  # dnslist=$(grep "nameserver" /etc/resolv.conf | awk -v d="," '{s=(NR==1?s:s d)$2}END{print s}')
+  # command_args="autorun -d ${dnslist}"
+  command_args="autorun"
 }
 
 reload() {
